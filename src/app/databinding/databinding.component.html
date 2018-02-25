@@ -1,0 +1,25 @@
+<p>{{'server'}} is a id of {{id}} status is {{getStatus()}}</p>
+
+<button class="btn btn-primary" [disabled]="!property"
+(click)="onStatusChange()"
+>property Binding Using</button>
+<p>{{property}}</p>
+<p *ngIf="isStatus;else noServer">{{getStatus()}}</p>
+
+<ng-template #noServer>
+  <p>
+    offline
+  </p>
+</ng-template>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <label>Name</label>
+    <input type="text"
+    (input)="onUpdateName($event)">
+    <div>
+      {{name}}
+    </div>
+  </div>
+</div>
