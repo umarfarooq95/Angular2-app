@@ -19,6 +19,7 @@ var recipe_detail_component_1 = require('./recipe/recipe-detail/recipe-detail.co
 var recipe_item_component_1 = require('./recipe/recipe-list/recipe-item/recipe-item.component');
 var shopping_list_component_1 = require('./shopping-list/shopping-list.component');
 var shopping_edit_component_1 = require('./shopping-list/shopping-edit/shopping-edit.component');
+var component_splitting_demo_component_1 = require('./component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +36,8 @@ var AppModule = (function () {
                 recipe_detail_component_1.RecipeDetailComponent,
                 recipe_item_component_1.RecipeItemComponent,
                 shopping_list_component_1.ShoppingListComponent,
-                shopping_edit_component_1.ShoppingEditComponent
+                shopping_edit_component_1.ShoppingEditComponent,
+                component_splitting_demo_component_1.ComponentSplittingDemoComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
