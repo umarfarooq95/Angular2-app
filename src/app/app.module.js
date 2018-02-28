@@ -20,6 +20,8 @@ var recipe_item_component_1 = require('./recipe/recipe-list/recipe-item/recipe-i
 var shopping_list_component_1 = require('./shopping-list/shopping-list.component');
 var shopping_edit_component_1 = require('./shopping-list/shopping-edit/shopping-edit.component');
 var component_splitting_demo_component_1 = require('./component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component');
+var cockpit_component_1 = require('./component-databinding-deep-dive/cockpit/cockpit.component');
+var server_element_component_1 = require('./component-databinding-deep-dive/server-element/server-element.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +39,9 @@ var AppModule = (function () {
                 recipe_item_component_1.RecipeItemComponent,
                 shopping_list_component_1.ShoppingListComponent,
                 shopping_edit_component_1.ShoppingEditComponent,
-                component_splitting_demo_component_1.ComponentSplittingDemoComponent
+                component_splitting_demo_component_1.ComponentSplittingDemoComponent,
+                cockpit_component_1.CockpitComponent,
+                server_element_component_1.ServerElementComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

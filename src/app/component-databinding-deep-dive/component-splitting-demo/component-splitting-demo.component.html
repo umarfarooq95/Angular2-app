@@ -1,44 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <label>Add New Server Or BluePrints</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <label for="serverName">Server</label>
-      <input type="text" id="serverName" class="form-control" [(ngModel)]="serverName">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <label for="serverContent">Server Content</label>
-      <input type="text" id="serverContent" class="form-control" [(ngModel)]="serverContent">
-    </div>
-  </div>
+  <app-cockpit
+    (serverCreated)="onServerCreated($event)"
+    (serverBluePrintCreated)="onServerBluePrintCreated($event)"
+  ></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-md-12">
-      <button type="button" (click)='onServerAdd()' class="btn-primary btn">Add Server</button>
-      <button type="button" (click)='onServerBluePrintAdd()' class="btn-primary btn">Add Server BluePrints</button>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-12">
-      <div
-        class="panel panel-default"
-        *ngFor="let server of serverElement">
-        <div class="panel-heading">
-          {{server.serverName}}
-        </div>
-        <div class="panel-body">
-          <p>
-            <strong *ngIf="server.type=='server'" style="color: red">{{server.serverContent}}</strong>
-            <em *ngIf="server.type=='bluePrint'" style="color: blue">{{server.serverContent}}</em>
-          </p>
-        </div>
-      </div>
+      <app-server-element
+        *ngFor="let server of serverElement"
+        [srvElem]="server"
+      ></app-server-element>
     </div>
   </div>
 </div>

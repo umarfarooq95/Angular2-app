@@ -8,24 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var ComponentSplittingDemoComponent = (function () {
     function ComponentSplittingDemoComponent() {
-        this.serverName = '';
-        this.serverContent = '';
-        this.serverElement = [];
+        this.serverElement = [{ type: 'bluePrint', name: 'ss', content: 'test' }];
     }
     ComponentSplittingDemoComponent.prototype.ngOnInit = function () {
     };
-    ComponentSplittingDemoComponent.prototype.onServerAdd = function () {
+    ComponentSplittingDemoComponent.prototype.onServerCreated = function (serverData) {
         var serverObj = {
-            serverName: this.serverName,
-            serverContent: this.serverContent,
+            name: serverData.serverName,
+            content: serverData.serverContent,
             type: "server"
         };
         this.serverElement.push(serverObj);
     };
-    ComponentSplittingDemoComponent.prototype.onServerBluePrintAdd = function () {
+    ComponentSplittingDemoComponent.prototype.onServerBluePrintCreated = function (blueprintData) {
         var serverBluePrintObj = {
-            serverName: this.serverName,
-            serverContent: this.serverContent,
+            name: blueprintData.serverName,
+            content: blueprintData.serverContent,
             type: "bluePrint"
         };
         this.serverElement.push(serverBluePrintObj);

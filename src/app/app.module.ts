@@ -15,6 +15,8 @@ import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-ite
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ComponentSplittingDemoComponent } from './component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component';
+import { CockpitComponent } from './component-databinding-deep-dive/cockpit/cockpit.component';
+import { ServerElementComponent } from './component-databinding-deep-dive/server-element/server-element.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { ComponentSplittingDemoComponent } from './component-databinding-deep-di
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    ComponentSplittingDemoComponent
+    ComponentSplittingDemoComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-component-splitting-demo',
@@ -7,31 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentSplittingDemoComponent implements OnInit {
 
-  serverName=''
-  serverContent=''
-  serverElement=[]
+  serverElement = [{type: 'bluePrint', name: 'ss', content: 'test'}]
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  onServerAdd(){
+  onServerCreated(serverData:{serverName:string,serverContent:string}) {
     let serverObj = {
-      serverName:this.serverName,
-      serverContent:this.serverContent,
-      type:"server"
+      name: serverData.serverName,
+      content: serverData.serverContent,
+      type: "server"
     }
     this.serverElement.push(serverObj)
   }
 
-  onServerBluePrintAdd(){
+  onServerBluePrintCreated(blueprintData:{serverName:string,serverContent:string}) {
     let serverBluePrintObj = {
-      serverName:this.serverName,
-      serverContent:this.serverContent,
-      type:"bluePrint"
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent,
+      type: "bluePrint"
     };
     this.serverElement.push(serverBluePrintObj)
   }
+
 
 }
