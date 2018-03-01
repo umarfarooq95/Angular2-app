@@ -1,7 +1,7 @@
 <div class="container">
   <app-cockpit
     (serverCreated)="onServerCreated($event)"
-    (serverBluePrintCreated)="onServerBluePrintCreated($event)"
+    (bpCreated)="onServerBluePrintCreated($event)"
   ></app-cockpit>
   <hr>
   <div class="row">
@@ -9,7 +9,12 @@
       <app-server-element
         *ngFor="let server of serverElement"
         [srvElem]="server"
-      ></app-server-element>
+      >
+        <p>
+          <strong *ngIf="server.type=='server'" style="color: red">{{server.content}}</strong>
+          <em *ngIf="server.type=='bluePrint'" style="color: blue">{{server.content}}</em>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>

@@ -4,9 +4,6 @@
     {{element.name}}
   </div>
   <div class="panel-body">
-    <p>
-      <strong *ngIf="element.type=='server'" style="color: red">{{element.content}}</strong>
-      <em *ngIf="element.type=='bluePrint'" style="color: blue">{{element.content}}</em>
-    </p>
+    <ng-content></ng-content><!--ng-content is the directive used for splitting the html code into the own component-->
   </div>
 </div>

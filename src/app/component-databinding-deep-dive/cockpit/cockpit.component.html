@@ -6,19 +6,24 @@
 <div class="row">
   <div class="col-md-12">
     <label for="serverName">Server</label>
-    <input type="text" id="serverName" class="form-control" [(ngModel)]="serverName">
+    <!--<input type="text" id="serverName" class="form-control" [(ngModel)]="serverName">-->
+    <input type="text" id="serverName" class="form-control"
+    #serverNameInput>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
     <label for="serverContent">Server Content</label>
-    <input type="text" id="serverContent" class="form-control" [(ngModel)]="serverContent">
+    <!--<input type="text" id="serverContent" class="form-control" [(ngModel)]="serverContent">-->
+    <input type="text" id="serverContent" class="form-control"
+           #serverContentInput
+    >
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <button type="button" (click)='onServerAdd()' class="btn-primary btn">Add Server</button>
-    <button type="button" (click)='onServerBluePrintAdd()' class="btn-primary btn">Add Server BluePrints</button>
+    <button type="button" (click)='onServerAdd(serverNameInput)' class="btn-primary btn">Add Server</button>
+    <button type="button" (click)='onServerBluePrintAdd(serverNameInput)' class="btn-primary btn">Add Server BluePrints</button>
   </div>
 </div>

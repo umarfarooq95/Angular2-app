@@ -7,30 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var CockpitComponent = (function () {
+    // we can access the value directly to the ts file unlike local ref
+    /*Output Is used to emit the custom Events we can pass the Event data whatever we want..In this case We want a
+    * serverName,serverContent Value*/
     function CockpitComponent() {
         this.serverCreated = new core_1.EventEmitter();
         this.serverBluePrintCreated = new core_1.EventEmitter();
-        /*Output Is used to emit the custom Events we can pass the Event data whatever we want..In this case We want a
-        * serverName,serverContent Value*/
-        this.serverName = '';
-        this.serverContent = '';
     }
     CockpitComponent.prototype.ngOnInit = function () {
     };
-    CockpitComponent.prototype.onServerAdd = function () {
-        this.serverCreated.emit({ serverName: this.serverName, serverContent: this.serverContent });
+    CockpitComponent.prototype.onServerAdd = function (serverNameInput) {
+        this.serverCreated.emit({ serverName: serverNameInput.value, serverContent: this.serverContentInput.nativeElement.value });
         /*Emit is the function that the emit the custom events*/
     };
-    CockpitComponent.prototype.onServerBluePrintAdd = function () {
-        this.serverBluePrintCreated.emit({ serverName: this.serverName, serverContent: this.serverContent });
+    CockpitComponent.prototype.onServerBluePrintAdd = function (serverNameInput) {
+        this.serverBluePrintCreated.emit({ serverName: serverNameInput.value, serverContent: this.serverContentInput.nativeElement.value });
         /*Emit is the function that the emit the custom events*/
     };
     __decorate([
         core_1.Output()
     ], CockpitComponent.prototype, "serverCreated");
     __decorate([
-        core_1.Output()
+        core_1.Output('bpCreated')
     ], CockpitComponent.prototype, "serverBluePrintCreated");
+    __decorate([
+        core_1.ViewChild('serverContentInput')
+    ], CockpitComponent.prototype, "serverContentInput");
     CockpitComponent = __decorate([
         core_1.Component({
             selector: 'app-cockpit',

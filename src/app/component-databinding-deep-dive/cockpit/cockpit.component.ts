@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output,ElementRef,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -6,27 +6,27 @@ import { Component, OnInit,EventEmitter,Output } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
-
   @Output() serverCreated=new EventEmitter<{serverName:string,serverContent:string}>()
-  @Output() serverBluePrintCreated=new EventEmitter<{serverName:string,serverContent:string}>()
+  @Output('bpCreated') serverBluePrintCreated=new EventEmitter<{serverName:string,serverContent:string}>()
 
+  @ViewChild('serverContentInput') serverContentInput:ElementRef;//ViewChild is like local Ref but 
+  // we can access the value directly to the ts file unlike local ref
+  
   /*Output Is used to emit the custom Events we can pass the Event data whatever we want..In this case We want a
   * serverName,serverContent Value*/
-
-  serverName=''
-  serverContent=''
+  
 
   constructor() { }
 
   ngOnInit() {
   }
-  onServerAdd(){
-    this.serverCreated.emit({serverName:this.serverName,serverContent:this.serverContent})
+  onServerAdd(serverNameInput:HTMLInputElement){//this is used as local reference we can use ref in any HTML element
+    this.serverCreated.emit({serverName:serverNameInput.value,serverContent:this.serverContentInput.nativeElement.value})
     /*Emit is the function that the emit the custom events*/
   }
 
-  onServerBluePrintAdd(){
-    this.serverBluePrintCreated.emit({serverName:this.serverName,serverContent:this.serverContent})
+  onServerBluePrintAdd(serverNameInput:HTMLInputElement){//this is used as local reference we can use ref in any HTML element
+    this.serverBluePrintCreated.emit({serverName:serverNameInput.value,serverContent:this.serverContentInput.nativeElement.value})
     /*Emit is the function that the emit the custom events*/
   }
 }
