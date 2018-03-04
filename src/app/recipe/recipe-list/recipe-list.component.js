@@ -12,9 +12,16 @@ var RecipeListComponent = (function () {
         this.Recipes = [
             new recipe_model_1.Recipe('Sample', 'Sampe', 'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png')
         ];
+        this.recipeWasSelected = new core_1.EventEmitter();
     }
     RecipeListComponent.prototype.ngOnInit = function () {
     };
+    RecipeListComponent.prototype.onSelectedRecipe = function (recipe) {
+        this.recipeWasSelected.emit(recipe);
+    };
+    __decorate([
+        core_1.Output()
+    ], RecipeListComponent.prototype, "recipeWasSelected");
     RecipeListComponent = __decorate([
         core_1.Component({
             selector: 'app-recipe-list',

@@ -8,7 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var HeaderComponent = (function () {
     function HeaderComponent() {
+        this.featureSelected = new core_1.EventEmitter(); //this is for navigation 
     }
+    HeaderComponent.prototype.onSelect = function (feature) {
+        this.featureSelected.emit(feature);
+    };
+    __decorate([
+        core_1.Output()
+    ], HeaderComponent.prototype, "featureSelected");
     HeaderComponent = __decorate([
         core_1.Component({
             selector: 'app-header',

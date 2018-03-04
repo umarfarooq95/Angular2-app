@@ -11,6 +11,9 @@ var RecipeDetailComponent = (function () {
     }
     RecipeDetailComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        core_1.Input()
+    ], RecipeDetailComponent.prototype, "recipe");
     RecipeDetailComponent = __decorate([
         core_1.Component({
             selector: 'app-recipe-detail',

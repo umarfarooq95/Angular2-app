@@ -13,7 +13,9 @@ export class ServerElementComponent implements OnInit {
   /*we can pass the alias to the custom property binding if we use alias then the property name will not exist we use only
   * the alias property*/
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

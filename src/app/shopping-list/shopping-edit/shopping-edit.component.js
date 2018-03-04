@@ -6,11 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var ingredient_model_1 = require("../../shared/ingredient.model");
 var ShoppingEditComponent = (function () {
     function ShoppingEditComponent() {
+        this.onIngredientAdded = new core_1.EventEmitter();
     }
     ShoppingEditComponent.prototype.ngOnInit = function () {
     };
+    ShoppingEditComponent.prototype.onAddedItem = function () {
+        var ingName = this.nameInput.nativeElement.value;
+        var ingAmount = this.amountInput.nativeElement.value;
+        var newIngredient = new ingredient_model_1.Ingredient(ingName, ingAmount);
+        this.onIngredientAdded.emit(newIngredient);
+    };
+    __decorate([
+        core_1.ViewChild('nameInput')
+    ], ShoppingEditComponent.prototype, "nameInput");
+    __decorate([
+        core_1.ViewChild('amountInput')
+    ], ShoppingEditComponent.prototype, "amountInput");
+    __decorate([
+        core_1.Output()
+    ], ShoppingEditComponent.prototype, "onIngredientAdded");
     ShoppingEditComponent = __decorate([
         core_1.Component({
             selector: 'app-shopping-edit',

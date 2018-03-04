@@ -8,7 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        /*name = '';
+        age = "qqq";*/
+        this.featureSelected = 'recipe';
     }
+    AppComponent.prototype.onNavigate = function (feature) {
+        this.featureSelected = feature;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
