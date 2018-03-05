@@ -6,20 +6,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var accounts_services_1 = require("./Services/accounts.services");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(accountService) {
+        this.accountService = accountService;
         /*name = '';
-        age = "qqq";*/
+         age = "qqq";*/
+        this.accounts = [];
         this.featureSelected = 'recipe';
+        this.value = 5;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.accounts = this.accountService.accounts;
+    };
     AppComponent.prototype.onNavigate = function (feature) {
         this.featureSelected = feature;
+    };
+    AppComponent.prototype.onAccountAdded = function (newAccount) {
+        this.accountService.onAddAccount(newAccount.name, newAccount.status);
+    };
+    AppComponent.prototype.onStatusChanged = function (updateInfo) {
+        this.accountService.onUpdateSttaus(updateInfo.id, updateInfo.newStatus);
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
             templateUrl: './app.component.html',
-            styleUrls: ['./app.component.css']
+            styleUrls: ['./app.component.css'],
+            providers: [accounts_services_1.AccountServices]
         })
     ], AppComponent);
     return AppComponent;

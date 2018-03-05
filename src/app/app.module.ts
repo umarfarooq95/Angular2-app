@@ -17,11 +17,18 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { ComponentSplittingDemoComponent } from './component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component';
 import { CockpitComponent } from './component-databinding-deep-dive/cockpit/cockpit.component';
 import { ServerElementComponent } from './component-databinding-deep-dive/server-element/server-element.component';
+import { BasicHighlightDirective } from './Directive/basic-highlight-directive';
+import { BetterHighlightDirective } from './Directive/better-highlight.directive';
+import { UnlessDirective } from './Directive/unless.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { AccountComponent } from './Services/account/account.component';
+import { NewAccountComponent } from './Services/new-account/new-account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    BasicHighlightDirective,
     HeaderComponent,
     ServerComponent,
     ServersComponent,
@@ -34,7 +41,12 @@ import { ServerElementComponent } from './component-databinding-deep-dive/server
     ShoppingEditComponent,
     ComponentSplittingDemoComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    BetterHighlightDirective,
+    UnlessDirective,
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

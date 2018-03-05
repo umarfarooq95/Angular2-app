@@ -22,6 +22,12 @@ var shopping_edit_component_1 = require('./shopping-list/shopping-edit/shopping-
 var component_splitting_demo_component_1 = require('./component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component');
 var cockpit_component_1 = require('./component-databinding-deep-dive/cockpit/cockpit.component');
 var server_element_component_1 = require('./component-databinding-deep-dive/server-element/server-element.component');
+var basic_highlight_directive_1 = require('./Directive/basic-highlight-directive');
+var better_highlight_directive_1 = require('./Directive/better-highlight.directive');
+var unless_directive_1 = require('./Directive/unless.directive');
+var dropdown_directive_1 = require('./shared/dropdown.directive');
+var account_component_1 = require('./Services/account/account.component');
+var new_account_component_1 = require('./Services/new-account/new-account.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,6 +35,7 @@ var AppModule = (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
+                basic_highlight_directive_1.BasicHighlightDirective,
                 header_component_1.HeaderComponent,
                 server_component_1.ServerComponent,
                 servers_component_1.ServersComponent,
@@ -41,7 +48,12 @@ var AppModule = (function () {
                 shopping_edit_component_1.ShoppingEditComponent,
                 component_splitting_demo_component_1.ComponentSplittingDemoComponent,
                 cockpit_component_1.CockpitComponent,
-                server_element_component_1.ServerElementComponent
+                server_element_component_1.ServerElementComponent,
+                better_highlight_directive_1.BetterHighlightDirective,
+                unless_directive_1.UnlessDirective,
+                dropdown_directive_1.DropdownDirective,
+                account_component_1.AccountComponent,
+                new_account_component_1.NewAccountComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
