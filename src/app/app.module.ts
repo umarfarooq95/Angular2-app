@@ -23,6 +23,7 @@ import { UnlessDirective } from './Directive/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AccountComponent } from './Services/account/account.component';
 import { NewAccountComponent } from './Services/new-account/new-account.component';
+import {LoggingService} from "./Services/logging.services";
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { NewAccountComponent } from './Services/new-account/new-account.componen
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

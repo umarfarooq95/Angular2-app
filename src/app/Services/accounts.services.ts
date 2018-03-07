@@ -1,3 +1,8 @@
+import {LoggingService} from "./logging.services";
+
+import {Injectable,EventEmitter} from '@angular/core'
+
+@Injectable()
 export class AccountServices {
   accounts = [
     {
@@ -14,11 +19,19 @@ export class AccountServices {
     }
   ];
 
+  constructor(public loggingService:LoggingService){
+
+  }
+
+  statusUpdated = new EventEmitter<string>()
+
   onAddAccount(name:string, status:string) {
     this.accounts.push({name, status});
+    this.loggingService.loggedToConsole(status)
   }
 
   onUpdateSttaus(id:number, status:string) {
     this.accounts[id].status = status;
+    this.loggingService.loggedToConsole(status)
   }
 }

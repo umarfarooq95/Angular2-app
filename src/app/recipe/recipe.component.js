@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var recipe_service_1 = require("./recipe.service");
 var RecipeComponent = (function () {
     function RecipeComponent() {
     }
@@ -15,7 +16,8 @@ var RecipeComponent = (function () {
         core_1.Component({
             selector: 'app-recipe',
             templateUrl: './recipe.component.html',
-            styleUrls: ['./recipe.component.css']
+            styleUrls: ['./recipe.component.css'],
+            providers: [recipe_service_1.RecipeService]
         })
     ], RecipeComponent);
     return RecipeComponent;

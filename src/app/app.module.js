@@ -28,6 +28,7 @@ var unless_directive_1 = require('./Directive/unless.directive');
 var dropdown_directive_1 = require('./shared/dropdown.directive');
 var account_component_1 = require('./Services/account/account.component');
 var new_account_component_1 = require('./Services/new-account/new-account.component');
+var logging_services_1 = require("./Services/logging.services");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -59,7 +60,7 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule
             ],
-            providers: [],
+            providers: [logging_services_1.LoggingService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

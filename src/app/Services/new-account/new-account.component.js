@@ -6,8 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var logging_services_1 = require("../logging.services");
-var accounts_services_1 = require("../accounts.services");
 var NewAccountComponent = (function () {
     //@Output() accountAdded = new EventEmitter<{name:string, status:string}>();
     function NewAccountComponent(loggingServiceInj, accountService) {
@@ -19,16 +17,15 @@ var NewAccountComponent = (function () {
          name: accountName,
          status: accountStatus
          });*/
-        this.accountService.onAddAccount({ name: accountName, status: accountStatus });
+        this.accountService.onAddAccount(accountName, accountStatus);
         //console.log('A server status changed, new status: ' + accountStatus);
-        this.loggingServiceInj.loggedToConsole(accountStatus);
+        //this.loggingServiceInj.loggedToConsole(accountStatus)
     };
     NewAccountComponent = __decorate([
         core_1.Component({
             selector: 'app-new-account',
             templateUrl: './new-account.component.html',
-            styleUrls: ['./new-account.component.css'],
-            providers: [logging_services_1.LoggingService, accounts_services_1.AccountServices]
+            styleUrls: ['./new-account.component.css']
         })
     ], NewAccountComponent);
     return NewAccountComponent;

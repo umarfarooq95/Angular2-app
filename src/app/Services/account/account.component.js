@@ -6,8 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var logging_services_1 = require("../logging.services");
-var accounts_services_1 = require("../accounts.services");
 var AccountComponent = (function () {
     //@Output() statusChanged = new EventEmitter<{id: number, newStatus: string}>();
     function AccountComponent(loggingServiceInj, accountService) {
@@ -18,7 +16,9 @@ var AccountComponent = (function () {
         //this.statusChanged.emit({id: this.id, newStatus: status});
         this.accountService.onUpdateSttaus(this.id, status);
         //console.log('A server status changed, new status: ' + status);
-        this.loggingServiceInj.loggedToConsole(status);
+        //this.loggingServiceInj.loggedToConsole(status)
+        this.accountService.statusUpdated.subscribe(function (status) { return alert('New Status ' + status); });
+        this.accountService.statusUpdated.emit(status);
     };
     __decorate([
         core_1.Input()
@@ -30,8 +30,7 @@ var AccountComponent = (function () {
         core_1.Component({
             selector: 'app-account',
             templateUrl: './account.component.html',
-            styleUrls: ['./account.component.css'],
-            providers: [logging_services_1.LoggingService, accounts_services_1.AccountServices]
+            styleUrls: ['./account.component.css']
         })
     ], AccountComponent);
     return AccountComponent;

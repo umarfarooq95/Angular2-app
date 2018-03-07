@@ -6,15 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var recipe_model_1 = require("../recipe.model");
 var RecipeListComponent = (function () {
-    function RecipeListComponent() {
-        this.Recipes = [
-            new recipe_model_1.Recipe('Sample', 'Sampe', 'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png')
-        ];
+    function RecipeListComponent(RecipeService) {
+        this.RecipeService = RecipeService;
         this.recipeWasSelected = new core_1.EventEmitter();
     }
     RecipeListComponent.prototype.ngOnInit = function () {
+        this.Recipes = this.RecipeService.getRecipes();
     };
     RecipeListComponent.prototype.onSelectedRecipe = function (recipe) {
         this.recipeWasSelected.emit(recipe);
