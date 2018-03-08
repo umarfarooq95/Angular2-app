@@ -7,9 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var RecipeDetailComponent = (function () {
-    function RecipeDetailComponent() {
+    function RecipeDetailComponent(recipeService) {
+        this.recipeService = recipeService;
     }
     RecipeDetailComponent.prototype.ngOnInit = function () {
+    };
+    RecipeDetailComponent.prototype.onAddShoppingList = function () {
+        this.recipeService.addIngredientToShoppingList(this.recipe.ingredients);
     };
     __decorate([
         core_1.Input()

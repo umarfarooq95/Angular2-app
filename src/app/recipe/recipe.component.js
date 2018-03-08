@@ -8,9 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var recipe_service_1 = require("./recipe.service");
 var RecipeComponent = (function () {
-    function RecipeComponent() {
+    function RecipeComponent(recipeService) {
+        this.recipeService = recipeService;
     }
     RecipeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.recipeService.selectedRecipe.subscribe(function (recipe) {
+            _this.selectedRecipeData = recipe;
+        });
     };
     RecipeComponent = __decorate([
         core_1.Component({

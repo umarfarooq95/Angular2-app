@@ -24,6 +24,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AccountComponent } from './Services/account/account.component';
 import { NewAccountComponent } from './Services/new-account/new-account.component';
 import {LoggingService} from "./Services/logging.services";
+import {ShoppingListService} from "./shopping-list/shopping-list.service";
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import {LoggingService} from "./Services/logging.services";
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService,ShoppingListService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule { }

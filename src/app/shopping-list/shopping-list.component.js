@@ -6,15 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var ingredient_model_1 = require("../shared/ingredient.model");
 var ShoppingListComponent = (function () {
-    function ShoppingListComponent() {
-        this.ingredients = [
-            new ingredient_model_1.Ingredient("Apples", 5),
-            new ingredient_model_1.Ingredient("Tomates", 10)
-        ];
+    function ShoppingListComponent(shoppingListService) {
+        this.shoppingListService = shoppingListService;
     }
     ShoppingListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.ingredients = this.shoppingListService.getIngredients();
+        this.shoppingListService.ingredientsChanged.subscribe(function (ingredients) {
+            _this.ingredients = ingredients;
+        });
     };
     ShoppingListComponent = __decorate([
         core_1.Component({

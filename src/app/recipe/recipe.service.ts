@@ -1,8 +1,19 @@
 import {Recipe} from "./recipe.model";
-import {EventEmitter} from "@angular/core";
+import {EventEmitter,Injectable} from "@angular/core";
+import {Ingredient} from "../shared/ingredient.model";
+import {ShoppingListService} from "../shopping-list/shopping-list.service";
+
+@Injectable()
 export class RecipeService {
   private recipes:Recipe[] = [
-    new Recipe('Sample', 'Sampe', 'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_960_720.png')
+    new Recipe('Cheese Burger', 'What Else Do you Want?', 'https://i.ytimg.com/vi/a40xP-CvBAw/maxresdefault.jpg',[
+      new Ingredient('Meat',1),
+      new Ingredient('French Fries',20)
+    ]),
+    new Recipe('French Fries', 'Yummy...', 'http://img.taste.com.au/MudZOM3z/taste/2016/11/french-fries-87711-1.jpeg',[
+      new Ingredient('Potato',5),
+      new Ingredient('Meat',3)
+    ])
   ];
 
   getRecipes() {
@@ -10,4 +21,13 @@ export class RecipeService {
   }
 
   selectedRecipe = new EventEmitter<Recipe>()
+
+  constructor(private slService:ShoppingListService){
+
+  }
+
+
+  addIngredientToShoppingList(Ingredient:Ingredient[]){
+      this.slService.addIngForRecipe(Ingredient)
+  }
 }

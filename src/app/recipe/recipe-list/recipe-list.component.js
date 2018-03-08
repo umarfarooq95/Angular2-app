@@ -7,19 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var RecipeListComponent = (function () {
+    //@Output() recipeWasSelected = new EventEmitter<Recipe>();
     function RecipeListComponent(RecipeService) {
         this.RecipeService = RecipeService;
-        this.recipeWasSelected = new core_1.EventEmitter();
     }
     RecipeListComponent.prototype.ngOnInit = function () {
         this.Recipes = this.RecipeService.getRecipes();
     };
-    RecipeListComponent.prototype.onSelectedRecipe = function (recipe) {
-        this.recipeWasSelected.emit(recipe);
-    };
-    __decorate([
-        core_1.Output()
-    ], RecipeListComponent.prototype, "recipeWasSelected");
     RecipeListComponent = __decorate([
         core_1.Component({
             selector: 'app-recipe-list',
