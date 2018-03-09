@@ -30,6 +30,20 @@ var account_component_1 = require('./Services/account/account.component');
 var new_account_component_1 = require('./Services/new-account/new-account.component');
 var logging_services_1 = require("./Services/logging.services");
 var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
+var home_component_1 = require('./Routing/home/home.component');
+var users_component_1 = require('./Routing/users/users.component');
+var servers_component_2 = require('./Routing/servers/servers.component');
+var user_component_1 = require('./Routing/users/user/user.component');
+var edit_server_component_1 = require('./Routing/servers/edit-server/edit-server.component');
+var routing_server_component_1 = require('./Routing/servers/server/routing.server.component');
+var servers_service_1 = require('./Routing/servers/servers.service');
+var router_1 = require("@angular/router");
+var appRoutes = [
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'users', component: users_component_1.UsersComponent },
+    { path: 'user/:userId', component: user_component_1.UserComponent },
+    { path: 'servers', component: servers_component_2.RoutingServersComponent },
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -55,13 +69,20 @@ var AppModule = (function () {
                 unless_directive_1.UnlessDirective,
                 dropdown_directive_1.DropdownDirective,
                 account_component_1.AccountComponent,
-                new_account_component_1.NewAccountComponent
+                new_account_component_1.NewAccountComponent,
+                home_component_1.HomeComponent,
+                users_component_1.UsersComponent,
+                servers_component_2.RoutingServersComponent,
+                user_component_1.UserComponent,
+                edit_server_component_1.EditServerComponent,
+                routing_server_component_1.RoutingServerComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot(appRoutes)
             ],
-            providers: [logging_services_1.LoggingService, shopping_list_service_1.ShoppingListService],
+            providers: [logging_services_1.LoggingService, shopping_list_service_1.ShoppingListService, servers_service_1.ServersService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

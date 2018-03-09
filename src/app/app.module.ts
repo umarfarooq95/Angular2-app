@@ -27,6 +27,23 @@ import {LoggingService} from "./Services/logging.services";
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
 
 
+import { HomeComponent } from './Routing/home/home.component';
+import { UsersComponent } from './Routing/users/users.component';
+import { RoutingServersComponent } from './Routing/servers/servers.component';
+import { UserComponent } from './Routing/users/user/user.component';
+import { EditServerComponent } from './Routing/servers/edit-server/edit-server.component';
+import { RoutingServerComponent } from './Routing/servers/server/routing.server.component';
+import { ServersService } from './Routing/servers/servers.service';
+import {Routes,RouterModule} from "@angular/router";
+
+const appRoutes:Routes = [
+  {path:'',component:HomeComponent},
+  {path:'users',component:UsersComponent},
+  {path:'user/:userId',component:UserComponent},
+  {path:'servers',component:RoutingServersComponent},
+];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +65,20 @@ import {ShoppingListService} from "./shopping-list/shopping-list.service";
     UnlessDirective,
     DropdownDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    HomeComponent,
+    UsersComponent,
+    RoutingServersComponent,
+    UserComponent,
+    EditServerComponent,
+    RoutingServerComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggingService,ShoppingListService],//because shoppinglist service use in recipe also soo we are import here
+  providers: [LoggingService,ShoppingListService,ServersService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule { }
