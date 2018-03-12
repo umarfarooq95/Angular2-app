@@ -38,11 +38,22 @@ var edit_server_component_1 = require('./Routing/servers/edit-server/edit-server
 var routing_server_component_1 = require('./Routing/servers/server/routing.server.component');
 var servers_service_1 = require('./Routing/servers/servers.service');
 var router_1 = require("@angular/router");
+var page_not_found_component_1 = require('./Routing/page-not-found/page-not-found.component');
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
-    { path: 'users', component: users_component_1.UsersComponent },
-    { path: 'user/:userId', component: user_component_1.UserComponent },
-    { path: 'servers', component: servers_component_2.RoutingServersComponent },
+    {
+        path: 'users', component: users_component_1.UsersComponent, children: [
+            { path: ':userId/:userName', component: user_component_1.UserComponent }
+        ]
+    },
+    {
+        path: 'servers', component: servers_component_2.RoutingServersComponent, children: [
+            { path: ':id', component: routing_server_component_1.RoutingServerComponent },
+            { path: ':id/edit', component: edit_server_component_1.EditServerComponent },
+        ]
+    },
+    { path: 'not-found', component: page_not_found_component_1.PageNotFoundComponent },
+    { path: '**', redirectTo: '/not-found' },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -75,7 +86,8 @@ var AppModule = (function () {
                 servers_component_2.RoutingServersComponent,
                 user_component_1.UserComponent,
                 edit_server_component_1.EditServerComponent,
-                routing_server_component_1.RoutingServerComponent
+                routing_server_component_1.RoutingServerComponent,
+                page_not_found_component_1.PageNotFoundComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

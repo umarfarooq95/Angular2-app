@@ -7,9 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var UserComponent = (function () {
-    function UserComponent() {
+    function UserComponent(route) {
+        this.route = route;
     }
     UserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user = {
+            id: this.route.snapshot.params['userId'],
+            name: this.route.snapshot.params['userName']
+        };
+        this.paramSubscription = this.route.params /*params is observable so we can use subscribe that if we use params it will not updated when the new route '
+         change in the same component so we are using params...this method we can use as route reactively*/
+            .subscribe(function (params) {
+            _this.user.id = params['userId'];
+            _this.user.name = params['userName'];
+        });
+    };
+    UserComponent.prototype.ngOnDestroy = function () {
+        // manually but now we are using angular soo angular will do it for us...
+        this.paramSubscription.unsubscribe();
     };
     UserComponent = __decorate([
         core_1.Component({
