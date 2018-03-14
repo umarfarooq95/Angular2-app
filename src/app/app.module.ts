@@ -34,26 +34,11 @@ import {UserComponent} from './Routing/users/user/user.component';
 import {EditServerComponent} from './Routing/servers/edit-server/edit-server.component';
 import {RoutingServerComponent} from './Routing/servers/server/routing.server.component';
 import {ServersService} from './Routing/servers/servers.service';
-import {Routes, RouterModule} from "@angular/router";
 import {PageNotFoundComponent} from './Routing/page-not-found/page-not-found.component';
+import {RoutingExampleRouteModule} from "./Routing/routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 
-const appRoutes:Routes = [
-  {path: '', component: HomeComponent},
-  {
-    path: 'users', component: UsersComponent, children: [
-    {path: ':userId/:userName', component: UserComponent}
-  ]
-  },
-  {
-    path: 'servers', component: RoutingServersComponent, children: [
-    {path: ':id', component: RoutingServerComponent},
-    {path: ':id/edit', component: EditServerComponent},
-  ]
-  },
-  {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/not-found'},/*This is called Wild card Routes we can use Redirect also*/
 
-];
 
 
 @NgModule({
@@ -75,8 +60,8 @@ const appRoutes:Routes = [
     ServerElementComponent,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective,
-    AccountComponent,
+    DropdownDirective
+   /* AccountComponent,
     NewAccountComponent,
     HomeComponent,
     UsersComponent,
@@ -84,12 +69,13 @@ const appRoutes:Routes = [
     UserComponent,
     EditServerComponent,
     RoutingServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent*/
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    //RoutingExampleRouteModule,
+    AppRoutingModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
