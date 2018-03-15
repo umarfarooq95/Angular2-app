@@ -8,11 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var RecipeListComponent = (function () {
     //@Output() recipeWasSelected = new EventEmitter<Recipe>();
-    function RecipeListComponent(RecipeService) {
+    function RecipeListComponent(RecipeService, router, route) {
         this.RecipeService = RecipeService;
+        this.router = router;
+        this.route = route;
     }
     RecipeListComponent.prototype.ngOnInit = function () {
         this.Recipes = this.RecipeService.getRecipes();
+    };
+    /* onSelectedRecipe(recipe:Recipe) {
+     this.recipeWasSelected.emit(recipe)
+     }*/
+    RecipeListComponent.prototype.onNewRecipe = function () {
+        this.router.navigate(['new'], { relativeTo: this.route });
     };
     RecipeListComponent = __decorate([
         core_1.Component({

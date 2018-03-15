@@ -30,6 +30,8 @@ var logging_services_1 = require("./Services/logging.services");
 var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
 var servers_service_1 = require('./Routing/servers/servers.service');
 var app_routing_module_1 = require("./app-routing.module");
+var recipe_start_component_1 = require('./recipe/recipe-start/recipe-start.component');
+var recipe_edit_component_1 = require('./recipe/recipe-edit/recipe-edit.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -53,7 +55,9 @@ var AppModule = (function () {
                 server_element_component_1.ServerElementComponent,
                 better_highlight_directive_1.BetterHighlightDirective,
                 unless_directive_1.UnlessDirective,
-                dropdown_directive_1.DropdownDirective
+                dropdown_directive_1.DropdownDirective,
+                recipe_start_component_1.RecipeStartComponent,
+                recipe_edit_component_1.RecipeEditComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

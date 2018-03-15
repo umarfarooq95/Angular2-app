@@ -37,6 +37,8 @@ import {ServersService} from './Routing/servers/servers.service';
 import {PageNotFoundComponent} from './Routing/page-not-found/page-not-found.component';
 import {RoutingExampleRouteModule} from "./Routing/routing.module";
 import {AppRoutingModule} from "./app-routing.module";
+import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 
 
@@ -60,7 +62,9 @@ import {AppRoutingModule} from "./app-routing.module";
     ServerElementComponent,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
    /* AccountComponent,
     NewAccountComponent,
     HomeComponent,

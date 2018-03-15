@@ -26,6 +26,9 @@ var RecipeService = (function () {
     RecipeService.prototype.getRecipes = function () {
         return this.recipes.slice();
     };
+    RecipeService.prototype.getRecipe = function (index) {
+        return this.recipes.slice()[index];
+    };
     RecipeService.prototype.addIngredientToShoppingList = function (Ingredient) {
         this.slService.addIngForRecipe(Ingredient);
     };
