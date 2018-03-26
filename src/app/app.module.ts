@@ -4,8 +4,8 @@ import {FormsModule} from '@angular/forms';
 
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from '../app/header/header.component';
-import {ServerComponent} from '../app/server/server.component';
+import {HeaderComponent} from './header/header.component';
+import {ServerComponent} from './server/server.component';
 import {ServersComponent} from './servers/servers.component';
 import {DatabindingComponent} from './databinding/databinding.component';
 import {RecipeComponent} from './recipe/recipe.component';
@@ -42,6 +42,13 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 
 
 
+import { ObservableHomeComponent } from './Observables/home/home.component';
+import { ObservableUserComponent } from './Observables/user/user.component';
+import {ObservableRoutingModule} from './observable-routing-module';
+import { FormComponent } from './Forms/form/form.component'
+
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +71,7 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     UnlessDirective,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
    /* AccountComponent,
     NewAccountComponent,
     HomeComponent,
@@ -74,12 +81,17 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     EditServerComponent,
     RoutingServerComponent,
     PageNotFoundComponent*/
+    ObservableHomeComponent,
+    ObservableUserComponent,
+    FormComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     //RoutingExampleRouteModule,
-    AppRoutingModule
+    //AppRoutingModule,
+    ObservableRoutingModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
