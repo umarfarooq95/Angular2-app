@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 import {AppComponent} from './app.component';
@@ -45,7 +46,8 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { ObservableHomeComponent } from './Observables/home/home.component';
 import { ObservableUserComponent } from './Observables/user/user.component';
 import {ObservableRoutingModule} from './observable-routing-module';
-import { FormComponent } from './Forms/form/form.component'
+import { FormComponent } from './Forms/form/form.component';
+import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component'
 
 
 
@@ -83,14 +85,16 @@ import { FormComponent } from './Forms/form/form.component'
     PageNotFoundComponent*/
     ObservableHomeComponent,
     ObservableUserComponent,
-    FormComponent
+    FormComponent,
+    ReactiveFormsComponent
 
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule,//this form module is for template driven approach
     //RoutingExampleRouteModule,
     //AppRoutingModule,
+    ReactiveFormsModule,
     ObservableRoutingModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService],//because shoppinglist service use in recipe also soo we are import here
