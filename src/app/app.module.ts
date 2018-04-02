@@ -85,17 +85,17 @@ import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.co
     PageNotFoundComponent*/
     ObservableHomeComponent,
     ObservableUserComponent,
-    FormComponent,
-    ReactiveFormsComponent
+    //FormComponent,
+    //ReactiveFormsComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,//this form module is for template driven approach
     //RoutingExampleRouteModule,
-    //AppRoutingModule,
-    ReactiveFormsModule,
-    ObservableRoutingModule
+    AppRoutingModule,
+    //ReactiveFormsModule,
+    //ObservableRoutingModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
