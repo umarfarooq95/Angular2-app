@@ -48,6 +48,7 @@ import { ObservableUserComponent } from './Observables/user/user.component';
 import {ObservableRoutingModule} from './observable-routing-module';
 import { FormComponent } from './Forms/form/form.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component'
+import {RecipeService} from "./recipe/recipe.service";
 
 
 
@@ -94,10 +95,10 @@ import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.co
     FormsModule,//this form module is for template driven approach
     //RoutingExampleRouteModule,
     AppRoutingModule,
-    //ReactiveFormsModule,
+    ReactiveFormsModule,
     //ObservableRoutingModule
   ],
-  providers: [LoggingService, ShoppingListService, ServersService],//because shoppinglist service use in recipe also soo we are import here
+  providers: [LoggingService, ShoppingListService, ServersService,RecipeService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule {
