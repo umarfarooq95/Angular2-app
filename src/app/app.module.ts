@@ -49,6 +49,9 @@ import {ObservableRoutingModule} from './observable-routing-module';
 import { FormComponent } from './Forms/form/form.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component'
 import {RecipeService} from "./recipe/recipe.service";
+import { PipesComponent } from './pipes/pipes.component';
+import {ShortenPipe} from "./pipes/shorten.pipe";
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -86,6 +89,9 @@ import {RecipeService} from "./recipe/recipe.service";
     PageNotFoundComponent*/
     ObservableHomeComponent,
     ObservableUserComponent,
+    PipesComponent,
+    ShortenPipe,
+    FilterPipe
     //FormComponent,
     //ReactiveFormsComponent
 
