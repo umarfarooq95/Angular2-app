@@ -52,6 +52,9 @@ import {RecipeService} from "./recipe/recipe.service";
 import { PipesComponent } from './pipes/pipes.component';
 import {ShortenPipe} from "./pipes/shorten.pipe";
 import { FilterPipe } from './pipes/filter.pipe';
+import { MakingComponent } from './Making-HTTP-req/making.component';
+import {SampleHttpService} from "./Making-HTTP-req/sample-http-service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -91,7 +94,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     ObservableUserComponent,
     PipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    MakingComponent
     //FormComponent,
     //ReactiveFormsComponent
 
@@ -102,9 +106,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     //RoutingExampleRouteModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    //ObservableRoutingModule
+    //ObservableRoutingModule,
+    HttpClientModule
   ],
-  providers: [LoggingService, ShoppingListService, ServersService,RecipeService],//because shoppinglist service use in recipe also soo we are import here
+  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule {
