@@ -55,6 +55,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { MakingComponent } from './Making-HTTP-req/making.component';
 import {SampleHttpService} from "./Making-HTTP-req/sample-http-service";
 import {HttpClientModule} from "@angular/common/http";
+import {DataStorageService} from "./shared/data.storage.service";
 
 
 
@@ -109,7 +110,7 @@ import {HttpClientModule} from "@angular/common/http";
     //ObservableRoutingModule,
     HttpClientModule
   ],
-  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService],//because shoppinglist service use in recipe also soo we are import here
+  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule {
