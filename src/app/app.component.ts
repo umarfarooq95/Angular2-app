@@ -1,5 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {AccountServices} from "./Services/accounts.services";
+import * as firebase from 'firebase'
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.accounts = this.accountService.accounts
+    this.accounts = this.accountService.accounts;
+    firebase.initializeApp({
+      apiKey: "AIzaSyA5nfqnuGyhe6Qy6tbxq5h7JA93TT-v5xk",
+      authDomain: "ng-recipe-book-23ed0.firebaseapp.com"
+    })
+
   }
 
   onNavigate(feature:string) {

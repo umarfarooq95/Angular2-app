@@ -58,6 +58,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {DataStorageService} from "./shared/data.storage.service";
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import {AuthService} from "./auth/auth.service";
+import {AuthGuard} from "./auth/auth.guard";
 
 
 
@@ -114,7 +116,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     //ObservableRoutingModule,
     HttpClientModule
   ],
-  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService],//because shoppinglist service use in recipe also soo we are import here
+  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService,AuthService,AuthGuard],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
 })
 export class AppModule {
