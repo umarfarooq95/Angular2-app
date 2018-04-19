@@ -1,18 +1,13 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {ReactiveFormsModule} from '@angular/forms';
-
+import {RecipesModule} from "./recipe/recipes.module";
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ServerComponent} from './server/server.component';
 import {ServersComponent} from './servers/servers.component';
 import {DatabindingComponent} from './databinding/databinding.component';
-import {RecipeComponent} from './recipe/recipe.component';
-import {RecipeListComponent} from './recipe/recipe-list/recipe-list.component';
-import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.component';
-import {RecipeItemComponent} from './recipe/recipe-list/recipe-item/recipe-item.component';
 import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
 import {ComponentSplittingDemoComponent} from './component-databinding-deep-dive/component-splitting-demo/component-splitting-demo.component';
@@ -38,8 +33,6 @@ import {ServersService} from './Routing/servers/servers.service';
 import {PageNotFoundComponent} from './Routing/page-not-found/page-not-found.component';
 import {RoutingExampleRouteModule} from "./Routing/routing.module";
 import {AppRoutingModule} from "./app-routing.module";
-import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 
 
@@ -72,10 +65,6 @@ import {AuthGuard} from "./auth/auth.guard";
     ServerComponent,
     ServersComponent,
     DatabindingComponent,
-    RecipeComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     ComponentSplittingDemoComponent,
@@ -84,8 +73,6 @@ import {AuthGuard} from "./auth/auth.guard";
     BetterHighlightDirective,
     UnlessDirective,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
    /* AccountComponent,
     NewAccountComponent,
     HomeComponent,
@@ -112,9 +99,9 @@ import {AuthGuard} from "./auth/auth.guard";
     FormsModule,//this form module is for template driven approach
     //RoutingExampleRouteModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     //ObservableRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RecipesModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService,AuthService,AuthGuard],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
