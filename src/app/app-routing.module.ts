@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from "@angular/router";
 import {NgModule} from '@angular/core';
 import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
-import {AppHomeComponent} from "./home/home.component";
+import {AppHomeComponent} from "./core/home/home.component";
 
 
 

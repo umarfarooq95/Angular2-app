@@ -8,9 +8,9 @@ import {ObservableRoutingModule} from './observable-routing-module';
 import {SharedModule} from "./shared/shared.module";
 import {ShoppingListModule} from "./shopping-list/shopping-list.module";
 import {AuthModule} from "./auth/auth.module";
+import {CoreModule} from "./core/core.module";
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
 import {ServerComponent} from './server/server.component';
 import {ServersComponent} from './servers/servers.component';
 import {DatabindingComponent} from './databinding/databinding.component';
@@ -50,7 +50,6 @@ import {SampleHttpService} from "./Making-HTTP-req/sample-http-service";
 import {DataStorageService} from "./shared/data.storage.service";
 import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth.guard";
-import { AppHomeComponent } from './home/home.component';
 
 
 
@@ -59,7 +58,6 @@ import { AppHomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     BasicHighlightDirective,
-    HeaderComponent,
     ServerComponent,
     ServersComponent,
     DatabindingComponent,
@@ -83,7 +81,6 @@ import { AppHomeComponent } from './home/home.component';
     ShortenPipe,
     FilterPipe,
     MakingComponent,
-    AppHomeComponent
     //FormComponent,
     //ReactiveFormsComponent
 
@@ -97,7 +94,8 @@ import { AppHomeComponent } from './home/home.component';
     HttpClientModule,
     SharedModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService,AuthService,AuthGuard],//because shoppinglist service use in recipe also soo we are import here
   bootstrap: [AppComponent]
