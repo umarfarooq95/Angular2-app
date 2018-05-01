@@ -19,17 +19,8 @@ import {CockpitComponent} from './component-databinding-deep-dive/cockpit/cockpi
 import {ServerElementComponent} from './component-databinding-deep-dive/server-element/server-element.component';
 import {AccountComponent} from './Services/account/account.component';
 import {NewAccountComponent} from './Services/new-account/new-account.component';
-import {HomeComponent} from './Routing/home/home.component';
-import {UsersComponent} from './Routing/users/users.component';
-import {RoutingServersComponent} from './Routing/servers/servers.component';
-import {UserComponent} from './Routing/users/user/user.component';
-import {EditServerComponent} from './Routing/servers/edit-server/edit-server.component';
-import {RoutingServerComponent} from './Routing/servers/server/routing.server.component';
 import { ObservableHomeComponent } from './Observables/home/home.component';
 import { ObservableUserComponent } from './Observables/user/user.component';
-import {PageNotFoundComponent} from './Routing/page-not-found/page-not-found.component';
-import { FormComponent } from './Forms/form/form.component';
-import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component'
 import { MakingComponent } from './Making-HTTP-req/making.component';
 import { PipesComponent } from './pipes/pipes.component';
 
@@ -40,16 +31,12 @@ import {BasicHighlightDirective} from './Directive/basic-highlight-directive';
 import {BetterHighlightDirective} from './Directive/better-highlight.directive';
 import {UnlessDirective} from './Directive/unless.directive';
 
-import {LoggingService} from "./Services/logging.services";
-import {ShoppingListService} from "./shopping-list/shopping-list.service";
+
 import {ServersService} from './Routing/servers/servers.service';
-import {RecipeService} from "./recipe/recipe.service";
 import {ShortenPipe} from "./pipes/shorten.pipe";
 import { FilterPipe } from './pipes/filter.pipe';
 import {SampleHttpService} from "./Making-HTTP-req/sample-http-service";
-import {DataStorageService} from "./shared/data.storage.service";
-import {AuthService} from "./auth/auth.service";
-import {AuthGuard} from "./auth/auth.guard";
+import {FormModule} from "./Forms/form.module";
 
 
 
@@ -66,23 +53,14 @@ import {AuthGuard} from "./auth/auth.guard";
     ServerElementComponent,
     BetterHighlightDirective,
     UnlessDirective,
-   /* AccountComponent,
+    AccountComponent,
     NewAccountComponent,
-    HomeComponent,
-    UsersComponent,
-    RoutingServersComponent,
-    UserComponent,
-    EditServerComponent,
-    RoutingServerComponent,
-    PageNotFoundComponent*/
     ObservableHomeComponent,
     ObservableUserComponent,
     PipesComponent,
     ShortenPipe,
     FilterPipe,
-    MakingComponent,
-    //FormComponent,
-    //ReactiveFormsComponent
+    MakingComponent
 
   ],
   imports: [
@@ -90,14 +68,15 @@ import {AuthGuard} from "./auth/auth.guard";
     FormsModule,
     //RoutingExampleRouteModule,
     AppRoutingModule,
-    //ObservableRoutingModule,
+    ObservableRoutingModule,
     HttpClientModule,
     SharedModule,
     ShoppingListModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    FormModule
   ],
-  providers: [LoggingService, ShoppingListService, ServersService,RecipeService,SampleHttpService,DataStorageService,AuthService,AuthGuard],//because shoppinglist service use in recipe also soo we are import here
+  providers: [ServersService,SampleHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

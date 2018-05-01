@@ -9,9 +9,12 @@ import {RoutingServersComponent} from "./servers/servers.component";
 import {RoutingServerComponent} from "./servers/server/routing.server.component";
 import {EditServerComponent} from "./servers/edit-server/edit-server.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
 
 const appRoutes:Routes = [
-  {path: '', component: HomeComponent},
+  {path: 'routing/home', component: HomeComponent},
   {
     path: 'users', component: UsersComponent, children: [
     {path: ':userId/:userName', component: UserComponent}
@@ -29,12 +32,23 @@ const appRoutes:Routes = [
 ];
 
 @NgModule({
+  declarations:[
+    HomeComponent,
+    UsersComponent,
+    RoutingServersComponent,
+    UserComponent,
+    EditServerComponent,
+    RoutingServerComponent,
+    PageNotFoundComponent
+  ],
   imports: [
+    FormsModule,
+    BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule,CommonModule,FormsModule]
 })
 
 export class RoutingExampleRouteModule {
-  
+
 }
